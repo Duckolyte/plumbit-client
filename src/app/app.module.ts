@@ -10,7 +10,6 @@ import {NameComponent} from './util/input/material/name/name.component';
 import {FormsModule} from '@angular/forms';
 import {GenericListComponent} from './util/list/material-list/generic-list.component';
 import {OrderViewComponent} from './view/order-view/order-view.component';
-import {GenericAddRowComponent} from './util/list/row/generic-add-row/generic-add-row.component';
 import {GenericEditRowComponent} from './util/list/row/generic-edit-row/generic-edit-row.component';
 import {RowTemplateDirective} from './util/list/row/row-template-directive';
 import {DescriptionComponent} from './util/input/work-description/description/description.component';
@@ -25,7 +24,6 @@ import {DescriptionComponent} from './util/input/work-description/description/de
     NameComponent,
     GenericListComponent,
     OrderViewComponent,
-    GenericAddRowComponent,
     GenericEditRowComponent,
     RowTemplateDirective,
     DescriptionComponent
