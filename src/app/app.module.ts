@@ -14,6 +14,8 @@ import {GenericEditRowComponent} from './util/list/row/generic-edit-row/generic-
 import {RowTemplateDirective} from './util/list/row/row-template-directive';
 import {DescriptionComponent} from './util/input/work-description/description/description.component';
 import { EditButtonComponent } from './util/button/edit-button/edit-button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatMenuModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,10 @@ import { EditButtonComponent } from './util/button/edit-button/edit-button.compo
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

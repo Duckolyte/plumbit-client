@@ -1,1 +1,4 @@
-<p>edit-button works!</p>
+<button mat-button [matMenuTriggerFor]="menu">{{label}}</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let item of menuItems">{{item}}</button>
+</mat-menu>
