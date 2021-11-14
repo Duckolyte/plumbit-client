@@ -13,6 +13,7 @@ import {OrderViewComponent} from './view/order-view/order-view.component';
 import {GenericEditRowComponent} from './util/list/row/generic-edit-row/generic-edit-row.component';
 import {RowTemplateDirective} from './util/list/row/row-template-directive';
 import {DescriptionComponent} from './util/input/work-description/description/description.component';
+import { EditButtonComponent } from './util/button/edit-button/edit-button.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {DescriptionComponent} from './util/input/work-description/description/de
     OrderViewComponent,
     GenericEditRowComponent,
     RowTemplateDirective,
-    DescriptionComponent
+    DescriptionComponent,
+    EditButtonComponent
   ],
   entryComponents: [
     MaterialRowComponent,
