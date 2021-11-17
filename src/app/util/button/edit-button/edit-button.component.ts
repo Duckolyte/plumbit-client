@@ -1,12 +1,16 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatMenuTrigger} from '@angular/material';
+import {RowItem} from '../../list/row/row-item';
 
 @Component({
   selector: 'app-edit-button',
   templateUrl: './edit-button.component.html',
   styleUrls: ['./edit-button.component.css']
 })
-export class EditButtonComponent implements OnInit {
+export class EditButtonComponent<T extends RowItem> implements OnInit {
+
+  @Input()
+  rowItem: T;
 
   // @ts-ignore
   @ViewChild(MatMenuTrigger)
@@ -15,7 +19,10 @@ export class EditButtonComponent implements OnInit {
   private lang = 'english';
 
   menuItems = [
-    'delete'
+    {
+      label: 'Delete',
+      action: (rowItem) => rowItem.getService().delete(rowItem)
+    }
   ];
 
   private locale = {
@@ -35,10 +42,6 @@ export class EditButtonComponent implements OnInit {
         this.label = this.locale[localeKey];
       }
     }
-  }
-
-  openMenu(): void {
-    this.trigger.openMenu();
   }
 
 }
