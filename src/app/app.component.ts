@@ -7,7 +7,7 @@ import {MaterialUnit} from './model/material/material-unit';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'plumbit-client';
+  title = 'CompanyName'; // TODO get name from service
 
   materials = [
     {
