@@ -15,7 +15,9 @@ import {RowTemplateDirective} from './util/list/row/row-template-directive';
 import {DescriptionComponent} from './util/input/work-description/description/description.component';
 import { EditButtonComponent } from './util/button/edit-button/edit-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
+import {AppRoutes} from './app.routes';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,11 @@ import {MatButtonModule, MatMenuModule} from '@angular/material';
     FormsModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    RouterModule,
+    AppRoutes
   ],
   providers: [],
   bootstrap: [AppComponent]
