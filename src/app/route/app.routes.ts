@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { OrderViewComponent } from './view/order-view/order-view.component';
+import { OrderViewComponent } from '../display/order-view/order-view.component';
 
 const routes: Routes = [
   {

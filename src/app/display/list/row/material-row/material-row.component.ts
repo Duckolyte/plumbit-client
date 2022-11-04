@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {RowComponent} from '../row-component';
 import {MaterialRowData} from './material-row-data';
 import {ServableRow} from '../servable-row';
-import {MaterialService} from '../../../../service/material.service';
+import {MaterialService} from '../../../../data/service/material.service';
 
 @Component({
   selector: 'app-material-row',

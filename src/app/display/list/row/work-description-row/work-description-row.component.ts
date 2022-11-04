@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {RowComponent} from '../row-component';
 import {WorkDescriptionRowData} from './work-description-row-data';
 import {ServableRow} from '../servable-row';
-import {WorkDescriptionService} from '../../../../service/work-description.service';
+import {WorkDescriptionService} from '../../../../data/service/work-description.service';
 
 @Component({
   selector: 'app-work-description-row',

@@ -1,4 +1,4 @@
-import {CrudService} from '../../../service/crud-service';
+import {CrudService} from '../../../data/service/crud-service';
 
 export interface ServableRow {
   getService(): CrudService<any>;

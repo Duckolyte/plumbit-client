@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MaterialUnit} from './model/material/material-unit';
+import {MaterialUnit} from './data/model/material/material-unit';
 
 @Component({
   selector: 'app-root',

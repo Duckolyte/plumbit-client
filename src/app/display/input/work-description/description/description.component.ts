@@ -10,10 +10,12 @@ export class DescriptionComponent implements OnInit {
 
   @Input()
   workDescription: WorkDescriptionRowData;
+  label: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.label = 'Description';
   }
 
 }
