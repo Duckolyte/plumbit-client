@@ -31,7 +31,7 @@ import { StepsComponent } from './route/steps/steps.component';
 import { OrdersComponent } from './route/orders/orders.component';
 import { OrderListComponent } from './display/list/order-list/order-list.component';
 import { MaterialListComponent } from './display/list/material-list/material-list.component';
-import { FilterComponent } from './display/navbar/filter.component';
+import { FilterComponent } from './display/filter/filter.component';
 
 @NgModule({
   declarations: [
