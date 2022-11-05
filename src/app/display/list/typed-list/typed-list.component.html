@@ -1,22 +1,6 @@
 <form>
   <table [style.width]="'100%'" [style.margin-left]="'auto'" [style.margin-right]="'auto'">
     <tr *ngFor="let row of rows" [style.width]="'100%'">
-      <td>
-        <mat-form-field appearance="fill" [style.width]="'100%'">
-          <mat-label>Test</mat-label>
-          <input matInput type="text" name="name" class="form-control" required value="Lol">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field appearance="fill" [style.width]="'100%'">
-          <mat-label>Test</mat-label>
-          <input matInput type="text" name="name" class="form-control" required value="Lol">
-        </mat-form-field>
-      </td>
-    </tr>
-  </table>
-  <table [style.width]="'100%'" [style.margin-left]="'auto'" [style.margin-right]="'auto'">
-    <tr *ngFor="let row of rows" [style.width]="'100%'">
       <app-generic-edit-row [row]="row" [style.width]="'100%'"></app-generic-edit-row>
     </tr>
   </table>

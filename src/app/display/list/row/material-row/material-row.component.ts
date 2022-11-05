@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RowComponent} from '../row-component';
-import {MaterialRowData} from './material-row-data';
-import {ServableRow} from '../servable-row';
+import {Material} from '../../../../data/model/material/material';
 import {MaterialService} from '../../../../data/service/material.service';
 
 @Component({
@@ -9,18 +7,17 @@ import {MaterialService} from '../../../../data/service/material.service';
   templateUrl: './material-row.component.html',
   styleUrls: ['./material-row.component.css']
 })
-export class MaterialRowComponent implements RowComponent<MaterialRowData>, ServableRow, OnInit {
+export class MaterialRowComponent implements OnInit {
 
   @Input()
-  rowData: MaterialRowData;
+  material: Material;
 
   constructor(private materialService: MaterialService) { }
 
   ngOnInit() {
   }
 
-  getService(): MaterialService {
-    return this.materialService;
+  cancelItem() {
+    this.materialService.delete(this.material);
   }
-
 }

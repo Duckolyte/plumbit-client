@@ -16,13 +16,13 @@ import {DescriptionComponent} from './display/input/work-description/description
 import { EditButtonComponent } from './display/button/edit-button/edit-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
-  MatCardModule, MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatTableModule,
-  MatToolbarModule
+    MatButtonModule,
+    MatCardModule, MatGridListModule,
+    MatIconModule,
+    MatInputModule, MatListModule,
+    MatMenuModule,
+    MatTableModule,
+    MatToolbarModule
 } from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {AppRoutes} from './app.routes';
@@ -30,6 +30,8 @@ import { MaterialsComponent } from './route/materials/materials.component';
 import { StepsComponent } from './route/steps/steps.component';
 import { OrdersComponent } from './route/orders/orders.component';
 import { OrderListComponent } from './display/list/order-list/order-list.component';
+import { MaterialListComponent } from './display/list/material-list/material-list.component';
+import { FilterComponent } from './display/navbar/filter.component';
 
 @NgModule({
   declarations: [
@@ -48,26 +50,29 @@ import { OrderListComponent } from './display/list/order-list/order-list.compone
     MaterialsComponent,
     StepsComponent,
     OrdersComponent,
-    OrderListComponent],
+    OrderListComponent,
+    MaterialListComponent,
+    FilterComponent],
   entryComponents: [
     MaterialRowComponent,
     WorkDescriptionRowComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    RouterModule,
-    AppRoutes,
-    MatInputModule,
-    MatTableModule,
-    MatCardModule,
-    MatGridListModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        RouterModule,
+        AppRoutes,
+        MatInputModule,
+        MatTableModule,
+        MatCardModule,
+        MatGridListModule,
+        MatListModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

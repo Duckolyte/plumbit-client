@@ -1,3 +1,11 @@
+# Todos:
+
+1. Weiter mit /materials und /steps
+Verwende die Beispiele von https://material.angular.io/components/input/examples 
+
+
+
+
 # PlumbitClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.

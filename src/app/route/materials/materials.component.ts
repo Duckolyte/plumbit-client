@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {RowItem} from '../../display/list/row/row-item';
 import {MaterialService} from '../../data/service/material.service';
-import {MaterialRowComponent} from '../../display/list/row/material-row/material-row.component';
-import {MaterialRowData} from '../../display/list/row/material-row/material-row-data';
+import {Material} from '../../data/model/material/material';
 
 @Component({
   selector: 'app-materials',
@@ -11,16 +9,12 @@ import {MaterialRowData} from '../../display/list/row/material-row/material-row-
 })
 export class MaterialsComponent implements OnInit {
 
-  materialRowComponents: RowItem[];
+  materials: Material[];
 
   constructor(private materialService: MaterialService) { }
 
   ngOnInit() {
-    this.materialRowComponents = this.materialService.getMaterials().map(mat =>
-      new RowItem(
-        MaterialRowComponent,
-        {material: mat} as MaterialRowData)
-    );
+    this.materials = this.materialService.getMaterials();
   }
 
 }

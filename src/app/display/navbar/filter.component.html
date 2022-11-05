@@ -1,0 +1,10 @@
+<form class="filter-form">
+  <mat-form-field class="filter-form-field" appearance="fill">
+    <mat-label>Filter</mat-label>
+    <input matInput type="text" [(ngModel)]="filter" name="filter">
+    <button matSuffix mat-icon-button aria-label="Filter" (click)="filterList()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+<mat-divider></mat-divider>

@@ -1,0 +1,17 @@
+<mat-grid-list cols="1" rowHeight="10:1">
+  <mat-grid-tile *ngFor="let material of materials">
+    <div matLine>
+      <app-material-row [material]="material"></app-material-row>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<!--
+
+<mat-list>
+  <div mat-subheader>{{subheader}}</div>
+  <mat-list-item class="my-line" *ngFor="let material of materials">
+    <app-material-row [material]="material"></app-material-row>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+-->

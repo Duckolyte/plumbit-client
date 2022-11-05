@@ -1,3 +1,10 @@
-<app-name [material]="rowData.material"></app-name>
-<app-count [material]="rowData.material"></app-count>
-<app-unit [material]="rowData.material"></app-unit>
+<span class="row-container">
+  <app-name class="row" [material]="material"></app-name>
+  <app-count class="row" [material]="material"></app-count>
+  <app-unit class="row" [material]="material"></app-unit>
+  <div class="align-center">
+    <button matSuffix mat-icon-button aria-label="Filter" (click)="cancelItem()" class="align-center">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+</span>
