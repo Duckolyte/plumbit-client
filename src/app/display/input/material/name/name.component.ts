@@ -10,10 +10,12 @@ export class NameComponent implements OnInit {
 
   @Input()
   material: Material;
+  label: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.label = 'Material';
   }
 
 }

@@ -10,10 +10,12 @@ export class UnitComponent implements OnInit {
 
   @Input()
   material: Material;
+  label: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.label = 'Unit';
   }
 
 }

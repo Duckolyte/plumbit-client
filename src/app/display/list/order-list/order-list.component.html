@@ -1,0 +1,21 @@
+<mat-grid-list cols="1" rowHeight="4:1">
+  <mat-grid-tile *ngFor="let order of orders">
+    <mat-card [style.width]="'80%'">
+      <mat-card-header>
+        <div mat-card-avatar class="client-image"></div>
+        <mat-card-title>order title</mat-card-title>
+        <mat-card-subtitle>order client</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li><div>Anzahl Arbeitsschritte: {{order.steps.length}}</div></li>
+          <li><div>Anzahl Materialien: {{order.materials.length}}</div></li>
+          <li><div>TODO hier vielleicht auch die steps und materials falls platz.</div></li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button [textContent]="'Edit'"></button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

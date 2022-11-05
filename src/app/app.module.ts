@@ -8,16 +8,28 @@ import {CountComponent} from './display/input/material/count/count.component';
 import {UnitComponent} from './display/input/material/unit/unit.component';
 import {NameComponent} from './display/input/material/name/name.component';
 import {FormsModule} from '@angular/forms';
-import {GenericListComponent} from './display/list/material-list/generic-list.component';
+import {TypedListComponent} from './display/list/typed-list/typed-list.component';
 import {OrderViewComponent} from './display/order-view/order-view.component';
 import {GenericEditRowComponent} from './display/list/row/generic-edit-row/generic-edit-row.component';
 import {RowTemplateDirective} from './display/list/row/row-template-directive';
 import {DescriptionComponent} from './display/input/work-description/description/description.component';
 import { EditButtonComponent } from './display/button/edit-button/edit-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule, MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
 import {RouterModule} from '@angular/router';
-import {AppRoutes} from './route/app.routes';
+import {AppRoutes} from './app.routes';
+import { MaterialsComponent } from './route/materials/materials.component';
+import { StepsComponent } from './route/steps/steps.component';
+import { OrdersComponent } from './route/orders/orders.component';
+import { OrderListComponent } from './display/list/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +39,16 @@ import {AppRoutes} from './route/app.routes';
     CountComponent,
     UnitComponent,
     NameComponent,
-    GenericListComponent,
+    TypedListComponent,
     OrderViewComponent,
     GenericEditRowComponent,
     RowTemplateDirective,
     DescriptionComponent,
-    EditButtonComponent
-  ],
+    EditButtonComponent,
+    MaterialsComponent,
+    StepsComponent,
+    OrdersComponent,
+    OrderListComponent],
   entryComponents: [
     MaterialRowComponent,
     WorkDescriptionRowComponent
@@ -48,7 +63,10 @@ import {AppRoutes} from './route/app.routes';
     MatIconModule,
     RouterModule,
     AppRoutes,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
