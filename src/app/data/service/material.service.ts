@@ -30,6 +30,13 @@ export class MaterialService implements CrudService<Material> {
       unit: MaterialUnit.PIECE,
       name: 'test material 3',
       deleted: false
+    },
+    {
+      id: '4',
+      count: 15,
+      unit: MaterialUnit.PIECE,
+      name: 'lol a mat 4',
+      deleted: false
     }
   ];
 

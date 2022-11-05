@@ -1,3 +1,7 @@
 .my-line {
   height: 200px;
 }
+
+.vertical-spacers {
+  margin: 1em;
+}

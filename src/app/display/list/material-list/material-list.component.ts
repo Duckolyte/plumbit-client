@@ -18,4 +18,7 @@ export class MaterialListComponent implements OnInit {
     this.subheader = 'Materials';
   }
 
+  addItem() {
+    this.materials.push(new Material());
+  }
 }

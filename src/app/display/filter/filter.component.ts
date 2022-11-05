@@ -9,7 +9,7 @@ import {Material} from '../../data/model/material/material';
 export class FilterComponent implements OnInit {
 
   @Input()
-  materials: Material[];
+  list: Material[];
   filter: string;
 
   constructor() {
@@ -20,6 +20,8 @@ export class FilterComponent implements OnInit {
   }
 
   filterList() {
-    this.materials = this.materials.filter(material => material.name === this.filter);
+    console.log(this.list);
+    this.list = this.list.filter(material => material.name.includes(this.filter));
+    console.log(this.list);
   }
 }
