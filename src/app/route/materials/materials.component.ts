@@ -17,4 +17,7 @@ export class MaterialsComponent implements OnInit {
     this.materials = this.materialService.getMaterials();
   }
 
+  filterList(filter: string) {
+    this.materials = this.materialService.getMaterials().filter(material => material.name.includes(filter));
+  }
 }

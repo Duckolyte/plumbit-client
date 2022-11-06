@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Material} from '../../data/model/material/material';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -8,8 +7,9 @@ import {Material} from '../../data/model/material/material';
 })
 export class FilterComponent implements OnInit {
 
-  @Input()
-  list: Material[];
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output()
+  onChange: EventEmitter<string> = new EventEmitter<string>();
   filter: string;
 
   constructor() {
@@ -20,8 +20,6 @@ export class FilterComponent implements OnInit {
   }
 
   filterList() {
-    console.log(this.list);
-    this.list = this.list.filter(material => material.name.includes(this.filter));
-    console.log(this.list);
+    this.onChange.emit(this.filter);
   }
 }
