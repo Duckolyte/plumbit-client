@@ -1,13 +1,14 @@
 <div>
   <section class="vertical-spacers">
-    <div class="example-button-container">
-      <button mat-fab color="primary" aria-label="Add" (click)="addItem()">
+    <div class="button-container">
+      <span mat-subheader>{{subheader}}</span>
+      <button mat-flat-button color="primary" aria-label="Add" (click)="addItem()">
         <mat-icon>add</mat-icon>
       </button>
     </div>
   </section>
   <mat-grid-list cols="1" rowHeight="10:1">
-    <mat-grid-tile *ngFor="let material of materials">
+    <mat-grid-tile *ngFor="let material of viewedMaterials">
       <div matLine>
         <app-material-row [material]="material"></app-material-row>
       </div>

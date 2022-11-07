@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Material} from '../../../data/model/material/material';
 
+
 @Component({
   selector: 'app-material-list',
   templateUrl: './material-list.component.html',
@@ -9,6 +10,7 @@ import {Material} from '../../../data/model/material/material';
 export class MaterialListComponent implements OnInit {
 
   @Input() materials: Material[];
+  viewedMaterials: Material[];
   subheader: string;
 
   constructor() {
@@ -16,9 +18,18 @@ export class MaterialListComponent implements OnInit {
 
   ngOnInit() {
     this.subheader = 'Materials';
+    this.viewedMaterials = this.materials;
   }
 
   addItem() {
-    this.materials.push(new Material());
+    if (this.materials.length > 0 && this.materials[0].name) {
+      this.materials.unshift(new Material());
+    }
+  }
+
+  filterList(filter: string) {
+    this.viewedMaterials = this.materials
+      .filter(material => material.name)
+      .filter(material => material.name.includes(filter));
   }
 }
