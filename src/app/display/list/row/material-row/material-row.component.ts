@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Material} from '../../../../data/model/material/material';
-import {MaterialService} from '../../../../data/service/material.service';
 
 @Component({
   selector: 'app-material-row',

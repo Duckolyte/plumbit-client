@@ -25,13 +25,17 @@ export class MaterialListComponent implements OnInit {
   }
 
   addItem() {
-    if (this.hasIncompleteFirstRecord()) {
+    if (this.isEmpty(this.materials) || this.hasCompleteFirstRecord()) {
       this.materials.unshift(new Material());
       this.updateFilteredList(this.filter);
     }
   }
 
-  private hasIncompleteFirstRecord() {
+  private isEmpty(materials: Material[]) {
+    return materials.length < 1;
+  }
+
+  private hasCompleteFirstRecord() {
     return this.materialService.isValid(this.materials[0]);
   }
 

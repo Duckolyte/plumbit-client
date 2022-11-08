@@ -24,6 +24,8 @@ export class MaterialsComponent implements OnInit {
   }
 
   saveMaterials(materials: Material[]) {
+    // TODO: check all materials are valid with materialService.isValid(material)
+    //  if so update order with materials
     // this.orderService.updateMaterialsOfOrder(materials); // TODO take order as input and save meterials of order.
   }
 }
