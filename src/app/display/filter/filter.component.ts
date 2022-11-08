@@ -18,7 +18,8 @@ export class FilterComponent implements OnInit {
     this.filter = '';
   }
 
-  filterList() {
+  filterChanged() {
     this.filterChange.emit(this.filter);
   }
+
 }

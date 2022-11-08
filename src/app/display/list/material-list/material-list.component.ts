@@ -1,8 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Material} from '../../../data/model/material/material';
-import {OrderService} from '../../../data/service/order.service';
 import {MaterialService} from '../../../data/service/material.service';
-import {materialize} from 'rxjs/operators';
 
 
 @Component({
@@ -29,7 +27,7 @@ export class MaterialListComponent implements OnInit {
   addItem() {
     if (this.hasIncompleteFirstRecord()) {
       this.materials.unshift(new Material());
-      this.filterList(this.filter);
+      this.updateFilteredList(this.filter);
     }
   }
 
@@ -37,7 +35,7 @@ export class MaterialListComponent implements OnInit {
     return this.materialService.isValid(this.materials[0]);
   }
 
-  filterList(filter: string) {
+  updateFilteredList(filter: string) {
     this.filter = filter;
     this.viewedMaterials = this.materials
       .filter(material => this.materialService.isNotValid(material) || material.name.includes(filter));
@@ -55,6 +53,6 @@ export class MaterialListComponent implements OnInit {
 
   deleteMaterial(material: Material) {
     this.materials.splice(this.materials.indexOf(material), 1);
-    this.filterList(this.filter);
+    this.updateFilteredList(this.filter);
   }
 }

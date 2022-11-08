@@ -20,7 +20,7 @@ export class MaterialsComponent implements OnInit {
   }
 
   filterList(filter: string) {
-    this.materialListComponent.filterList(filter);
+    this.materialListComponent.updateFilteredList(filter);
   }
 
   saveMaterials(materials: Material[]) {

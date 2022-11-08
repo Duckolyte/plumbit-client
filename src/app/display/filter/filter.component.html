@@ -1,8 +1,8 @@
 <form class="filter-form">
   <mat-form-field class="filter-form-field" appearance="fill">
     <mat-label>Filter</mat-label>
-    <input matInput type="text" [(ngModel)]="filter" name="filter" (change)="filterList()">
-    <button matSuffix mat-icon-button aria-label="Filter" (click)="filterList()">
+    <input matInput type="text" [(ngModel)]="filter" name="filter" (input)="filterChanged()">
+    <button matSuffix mat-icon-button aria-label="Filter" (click)="filterChanged()">
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
