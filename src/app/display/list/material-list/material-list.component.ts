@@ -1,5 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Material} from '../../../data/model/material/material';
+import {OrderService} from '../../../data/service/order.service';
+import {MaterialService} from '../../../data/service/material.service';
+import {materialize} from 'rxjs/operators';
 
 
 @Component({
@@ -9,11 +12,13 @@ import {Material} from '../../../data/model/material/material';
 })
 export class MaterialListComponent implements OnInit {
 
+  @Output() saveMaterials: EventEmitter<Material[]> = new EventEmitter<Material[]>();
   @Input() materials: Material[];
   viewedMaterials: Material[];
   subheader: string;
+  private filter = '';
 
-  constructor() {
+  constructor(private materialService: MaterialService) {
   }
 
   ngOnInit() {
@@ -22,14 +27,34 @@ export class MaterialListComponent implements OnInit {
   }
 
   addItem() {
-    if (this.materials.length > 0 && this.materials[0].name) {
+    if (this.hasIncompleteFirstRecord()) {
       this.materials.unshift(new Material());
+      this.filterList(this.filter);
     }
   }
 
+  private hasIncompleteFirstRecord() {
+    return this.materialService.isValid(this.materials[0]);
+  }
+
   filterList(filter: string) {
+    this.filter = filter;
     this.viewedMaterials = this.materials
-      .filter(material => material.name)
-      .filter(material => material.name.includes(filter));
+      .filter(material => this.materialService.isNotValid(material) || material.name.includes(filter));
+  }
+
+  submit() {
+    if (this.materialsAreValid()) {
+      this.saveMaterials.emit(this.materials);
+    }
+  }
+
+  private materialsAreValid() {
+    return this.materials.filter(material => !this.materialService.isValid(material)).length < 1;
+  }
+
+  deleteMaterial(material: Material) {
+    this.materials.splice(this.materials.indexOf(material), 1);
+    this.filterList(this.filter);
   }
 }

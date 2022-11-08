@@ -7,9 +7,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  // tslint:disable-next-line:no-output-on-prefix
   @Output()
-  onChange: EventEmitter<string> = new EventEmitter<string>();
+  filterChange: EventEmitter<string> = new EventEmitter<string>();
   filter: string;
 
   constructor() {
@@ -20,6 +19,6 @@ export class FilterComponent implements OnInit {
   }
 
   filterList() {
-    this.onChange.emit(this.filter);
+    this.filterChange.emit(this.filter);
   }
 }

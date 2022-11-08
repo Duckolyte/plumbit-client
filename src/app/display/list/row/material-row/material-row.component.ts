@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Material} from '../../../../data/model/material/material';
 import {MaterialService} from '../../../../data/service/material.service';
 
@@ -9,15 +9,17 @@ import {MaterialService} from '../../../../data/service/material.service';
 })
 export class MaterialRowComponent implements OnInit {
 
+  @Output()
+  deleteMaterial: EventEmitter<Material> = new EventEmitter<Material>();
   @Input()
   material: Material;
 
-  constructor(private materialService: MaterialService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  cancelItem() {
-    this.materialService.delete(this.material);
+  deleteItem() {
+    this.deleteMaterial.emit(this.material);
   }
 }

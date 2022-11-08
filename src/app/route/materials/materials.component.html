@@ -1,4 +1,4 @@
 <div class="material-list-container">
-  <app-filter (onChange)="filterList($event)"></app-filter>
-  <app-material-list [materials]="materials"></app-material-list>
+  <app-filter (filterChange)="filterList($event)"></app-filter>
+  <app-material-list (saveMaterials)="saveMaterials($event)" [materials]="materials"></app-material-list>
 </div>

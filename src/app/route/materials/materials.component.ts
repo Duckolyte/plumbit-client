@@ -23,7 +23,7 @@ export class MaterialsComponent implements OnInit {
     this.materialListComponent.filterList(filter);
   }
 
-  /*filterList(filter: string) {
-    this.materials = this.materialService.getMaterials().filter(material => material.name.includes(filter));
-  }*/
+  saveMaterials(materials: Material[]) {
+    // this.orderService.updateMaterialsOfOrder(materials); // TODO take order as input and save meterials of order.
+  }
 }

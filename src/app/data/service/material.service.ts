@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import {MaterialUnit} from '../model/material/material-unit';
 import {Material} from '../model/material/material';
 import {CrudService} from './crud-service';
+import {ValidatorService} from './validator-service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class MaterialService implements CrudService<Material> {
-
+export class MaterialService implements CrudService<Material>, ValidatorService<Material> {
   testMaterials: Material[] = [
     {
       id: '1',
@@ -59,4 +59,14 @@ export class MaterialService implements CrudService<Material> {
 
   update(item: Material) {
   }
+
+  isValid(item: Material): boolean {
+    return item.name != null && item.count != null && item.unit != null;
+  }
+
+  isNotValid(item: Material): boolean {
+    return !this.isValid(item);
+  }
+
+
 }
