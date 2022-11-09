@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {MaterialUnit} from '../model/material/material-unit';
 import {Material} from '../model/material/material';
-import {CrudService} from './crud-service';
-import {ValidatorService} from './validator-service';
+import {OrderItemService} from './order-item-service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class MaterialService implements CrudService<Material>, ValidatorService<Material> {
+export class MaterialService implements OrderItemService<Material> {
   testMaterials: Material[] = [
     {
       id: '1',
@@ -68,5 +67,8 @@ export class MaterialService implements CrudService<Material>, ValidatorService<
     return !this.isValid(item);
   }
 
+  createEmptyItem(): Material {
+    return new Material();
+  }
 
 }

@@ -1,7 +1,8 @@
 # Todos:
 
-1. Weiter mit /materials und /steps
-Verwende die Beispiele von https://material.angular.io/components/input/examples 
+1. Weiter mit /steps wie steps 
+2. in order-item-list generisch, dynamisch die row mittels ng-template setzen 
+ 
 
 
 

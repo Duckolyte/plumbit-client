@@ -29,7 +29,7 @@ export class OrderViewComponent implements OnInit {
     this.workDescriptionRowComponents = this.workDescriptionService.getWorkDescriptions().map(desc =>
       new RowItem(
         WorkDescriptionRowComponent,
-        {description: desc.description} as WorkDescriptionRowData)
+        {description: desc.name} as WorkDescriptionRowData)
     );
   }
 

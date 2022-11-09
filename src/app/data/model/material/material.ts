@@ -1,9 +1,10 @@
 import {MaterialUnit} from './material-unit';
+import {OrderItem} from '../order-item';
 
-export class Material {
+export class Material implements OrderItem {
   id: string;
   count: number;
   unit: MaterialUnit;
-  name: string;
   deleted: boolean;
+  name: string;
 }

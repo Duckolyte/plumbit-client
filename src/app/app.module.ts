@@ -32,6 +32,7 @@ import { OrdersComponent } from './route/orders/orders.component';
 import { OrderListComponent } from './display/list/order-list/order-list.component';
 import { MaterialListComponent } from './display/list/material-list/material-list.component';
 import { FilterComponent } from './display/filter/filter.component';
+import { OrderItemListComponent } from './display/list/order-item-list/order-item-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { FilterComponent } from './display/filter/filter.component';
     OrdersComponent,
     OrderListComponent,
     MaterialListComponent,
-    FilterComponent],
+    FilterComponent,
+    OrderItemListComponent],
   entryComponents: [
     MaterialRowComponent,
     WorkDescriptionRowComponent

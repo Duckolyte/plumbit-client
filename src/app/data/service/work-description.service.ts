@@ -1,21 +1,22 @@
 import {Injectable} from '@angular/core';
 import {WorkDescription} from '../model/work-description/work-description';
 import {CrudService} from './crud-service';
+import {OrderItemService} from './order-item-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WorkDescriptionService implements CrudService<WorkDescription> {
+export class WorkDescriptionService implements OrderItemService<WorkDescription> {
 
   testWorkDescriptions: WorkDescription[] = [
     {
-      description: 'test description 1'
+      name: 'test description 1'
     },
     {
-      description: 'test description 2'
+      name: 'test description 2'
     },
     {
-      description: 'test description 3'
+      name: 'test description 3'
     }
   ];
 
@@ -38,5 +39,19 @@ export class WorkDescriptionService implements CrudService<WorkDescription> {
 
   update(item: WorkDescription) {
   }
+
+  createEmptyItem(): WorkDescription {
+    return new WorkDescription();
+  }
+
+  isNotValid(item: WorkDescription): boolean {
+    return false;
+  }
+
+  isValid(item: WorkDescription): boolean {
+    return false;
+  }
+
+
 
 }

@@ -1,4 +1,4 @@
-<div [style.text-align]="'center'">
-  <h3>Steps</h3>
-  <app-typed-list [rows]="workDescriptionRowComponents"></app-typed-list>
+<div class="material-list-container">
+  <app-filter (filterChange)="filterList($event)"></app-filter>
+  <app-order-item-list (saveList)="saveSteps($event)" [list]="steps"></app-order-item-list>
 </div>

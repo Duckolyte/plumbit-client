@@ -36,13 +36,13 @@ export class OrderService implements CrudService<Order> {
       ],
       steps: [
         {
-          description: 'test description 1'
+          name: 'test description 1'
         },
         {
-          description: 'test description 2'
+          name: 'test description 2'
         },
         {
-          description: 'test description 3'
+          name: 'test description 3'
         }
       ]
     },
@@ -73,13 +73,13 @@ export class OrderService implements CrudService<Order> {
       ],
       steps: [
         {
-          description: 'test description 1'
+          name: 'test description 1'
         },
         {
-          description: 'test description 2'
+          name: 'test description 2'
         },
         {
-          description: 'test description 3'
+          name: 'test description 3'
         }
       ]
     }

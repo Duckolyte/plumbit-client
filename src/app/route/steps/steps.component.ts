@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {RowItem} from '../../display/list/row/row-item';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {WorkDescriptionService} from '../../data/service/work-description.service';
-import {WorkDescriptionRowComponent} from '../../display/list/row/work-description-row/work-description-row.component';
-import {WorkDescriptionRowData} from '../../display/list/row/work-description-row/work-description-row-data';
+import {WorkDescription} from '../../data/model/work-description/work-description';
+import {OrderItemListComponent} from '../../display/list/order-item-list/order-item-list.component';
 
 @Component({
   selector: 'app-steps',
@@ -11,15 +10,22 @@ import {WorkDescriptionRowData} from '../../display/list/row/work-description-ro
 })
 export class StepsComponent implements OnInit {
 
-  workDescriptionRowComponents: RowItem[];
+  @ViewChild(OrderItemListComponent, {static: false}) stepListComponents: OrderItemListComponent<WorkDescription>;
+  steps: WorkDescription[];
 
   constructor(private workDescriptionService: WorkDescriptionService) { }
 
   ngOnInit() {
-    this.workDescriptionRowComponents = this.workDescriptionService.getWorkDescriptions().map(desc =>
-      new RowItem(
-        WorkDescriptionRowComponent,
-        {description: desc.description} as WorkDescriptionRowData)
-    );
+    this.steps = this.workDescriptionService.getWorkDescriptions();
+  }
+
+  filterList(filter: string) {
+    this.stepListComponents.updateFilteredList(filter);
+  }
+
+  saveSteps(steps: WorkDescription[]) {
+    // TODO: check all materials are valid with materialService.isValid(material)
+    //  if so update order with materials
+    // this.orderService.updateMaterialsOfOrder(materials); // TODO take order as input and save meterials of order.
   }
 }
