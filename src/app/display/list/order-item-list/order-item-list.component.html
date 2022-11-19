@@ -15,9 +15,7 @@
   <mat-grid-list cols="1" rowHeight="10:1">
     <mat-grid-tile *ngFor="let item of list">
       <div matLine>
-        <!-- TODO: replace app-material-row with ngTemplate and select app-material-row or app-work-description-row component dynamically -->
-        <!--<app-material-row (deleteMaterial)="deleteMaterial($event)" [item]="item"></app-material-row>-->
-        <ng-template></ng-template>
+        <app-generic-edit-row [rowData]="item"></app-generic-edit-row>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

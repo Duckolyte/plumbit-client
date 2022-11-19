@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {OrderItem} from '../../../data/model/order-item';
 import {OrderItemService} from '../../../data/service/order-item-service';
 
@@ -11,11 +11,11 @@ export class OrderItemListComponent<T extends OrderItem> implements OnInit {
 
   @Output() saveList: EventEmitter<T[]> = new EventEmitter<T[]>();
   @Input() list: T[];
-  viewedList: T[];
-  subheader: string;
+  private viewedList: T[];
+  private subheader: string;
   private filter = '';
 
-  constructor(private orderItemService: OrderItemService<T>) {
+  constructor(@Inject('OrderItemService') private orderItemService: OrderItemService<T>) {
   }
 
   ngOnInit() {

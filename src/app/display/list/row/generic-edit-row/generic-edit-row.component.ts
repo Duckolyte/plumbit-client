@@ -1,31 +1,31 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
-import {RowComponent} from '../row-component';
+import {OrderItem} from '../../../../data/model/order-item';
 import {RowTemplateDirective} from '../row-template-directive';
-import {RowItem} from '../row-item';
-import {RowData} from '../row-data';
+import {OrderItemService} from '../../../../data/service/order-item-service';
+import {RowComponent} from '../row-component';
 
 @Component({
   selector: 'app-generic-edit-row',
   templateUrl: './generic-edit-row.component.html',
   styleUrls: ['./generic-edit-row.component.css']
 })
-export class GenericEditRowComponent<T extends RowItem> implements OnInit {
+export class GenericEditRowComponent<T extends OrderItem> implements OnInit {
 
   @Input()
-  row: T;
+  rowData: T;
 
-  @ViewChild(RowTemplateDirective, {static: true})
-  rowTemplate!: RowTemplateDirective;
+  @ViewChild(RowTemplateDirective, {static: true}) rowTemplate;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(/*private componentFactoryResolver: ComponentFactoryResolver, private orderItemService: OrderItemService<T>*/) {
   }
 
   ngOnInit() {
-    const viewContainerRef = this.rowTemplate.viewContainerRef;
+/*    const viewContainerRef = this.rowTemplate.viewContainerRef;
     viewContainerRef.clear();
 
-    const componentRef = viewContainerRef.createComponent<RowComponent<RowData>>(
-      this.componentFactoryResolver.resolveComponentFactory(this.row.component));
-    componentRef.instance.rowData = this.row.rowData;
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory<RowComponent<T>>(
+      this.orderItemService.getOrderItemRowComponent());
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+    componentRef.instance.rowData = this.rowData;*/
   }
 }

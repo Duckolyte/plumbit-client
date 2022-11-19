@@ -3,24 +3,21 @@ import {RowComponent} from '../row-component';
 import {WorkDescriptionRowData} from './work-description-row-data';
 import {ServableRow} from '../servable-row';
 import {WorkDescriptionService} from '../../../../data/service/work-description.service';
+import {WorkDescription} from '../../../../data/model/work-description/work-description';
 
 @Component({
   selector: 'app-work-description-row',
   templateUrl: './work-description-row.component.html',
   styleUrls: ['./work-description-row.component.css']
 })
-export class WorkDescriptionRowComponent implements RowComponent<WorkDescriptionRowData>, ServableRow, OnInit {
+export class WorkDescriptionRowComponent implements RowComponent<WorkDescription>, OnInit {
 
   @Input()
-  rowData: WorkDescriptionRowData;
+  rowData: WorkDescription;
 
-  constructor(private workDescriptionService: WorkDescriptionService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  getService(): WorkDescriptionService {
-    return this.workDescriptionService;
   }
 
 }

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, Type} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {MaterialRowComponent} from './display/list/row/material-row/material-row.component';
@@ -33,6 +33,11 @@ import { OrderListComponent } from './display/list/order-list/order-list.compone
 import { MaterialListComponent } from './display/list/material-list/material-list.component';
 import { FilterComponent } from './display/filter/filter.component';
 import { OrderItemListComponent } from './display/list/order-item-list/order-item-list.component';
+import {Material} from './data/model/material/material';
+import {WorkDescription} from './data/model/work-description/work-description';
+import {WorkDescriptionService} from './data/service/work-description.service';
+import {MaterialService} from './data/service/material.service';
+import {OrderItem} from './data/model/order-item';
 
 @NgModule({
   declarations: [
@@ -75,7 +80,17 @@ import { OrderItemListComponent } from './display/list/order-item-list/order-ite
         MatGridListModule,
         MatListModule
     ],
-  providers: [],
+  providers: [
+    MaterialService,
+    WorkDescriptionService
+    /*{ provide: 'OrderItemService', useFactory: (type: Type<OrderItem>) => {
+      switch (type) {
+        case Material: return new MaterialService();
+        case WorkDescription: return new WorkDescriptionService();
+        default: throw new Error(`Error creating OrderItemService of type ${type.name}. Type not supported.`);
+      }
+      } }*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

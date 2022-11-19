@@ -1,5 +1,5 @@
-import {RowData} from './row-data';
+import {OrderItem} from '../../../data/model/order-item';
 
-export interface RowComponent<T extends RowData> {
+export interface RowComponent<T extends OrderItem> {
   rowData: T;
 }

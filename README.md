@@ -1,8 +1,12 @@
 # Todos:
 
 1. Weiter mit /steps wie steps 
-2. in order-item-list generisch, dynamisch die row mittels ng-template setzen 
- 
+2. generische List für steps und material implementiert
+3. generische Row implemeniert
+4. provider der generischen services im app modules anmelden
+5. basic routes einrichten, main, login, 404
+6. feature modules einrichten für bill, property-owner
+7. routs pro module einrichten
 
 
 

@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Type} from '@angular/core';
 import {WorkDescription} from '../model/work-description/work-description';
-import {CrudService} from './crud-service';
 import {OrderItemService} from './order-item-service';
+import {WorkDescriptionRowComponent} from '../../display/list/row/work-description-row/work-description-row.component';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +52,8 @@ export class WorkDescriptionService implements OrderItemService<WorkDescription>
     return false;
   }
 
-
+  getOrderItemRowComponent(): Type<any> {
+    return WorkDescriptionRowComponent;
+  }
 
 }

@@ -1,7 +1,8 @@
-import {Injectable} from '@angular/core';
+import {Component, Injectable, Type} from '@angular/core';
 import {MaterialUnit} from '../model/material/material-unit';
 import {Material} from '../model/material/material';
 import {OrderItemService} from './order-item-service';
+import {MaterialRowComponent} from '../../display/list/row/material-row/material-row.component';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,10 @@ export class MaterialService implements OrderItemService<Material> {
 
   createEmptyItem(): Material {
     return new Material();
+  }
+
+  getOrderItemRowComponent(): Type<any> {
+    return MaterialRowComponent;
   }
 
 }
