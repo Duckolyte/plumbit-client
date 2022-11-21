@@ -86,13 +86,14 @@ import {ActiveServiceConfigService} from './data/service/active-service-config.s
     WorkDescriptionService,
     {
       provide: 'OrderItemService', useFactory: (config: ActiveServiceConfigService) => {
-        switch (config.activeViewType) {
+        switch (config.activeServiceConfig.activeViewType) {
           case Material:
             return new MaterialService();
           case WorkDescription:
             return new WorkDescriptionService();
           default:
-            throw new Error(`Error creating OrderItemService of type ${config.activeViewType.name}. Type not supported.`);
+            throw new Error(
+              `Error creating OrderItemService of type ${config.activeServiceConfig.activeViewType.name}. Type not supported.`);
         }
       },
       deps: [ActiveServiceConfigService]

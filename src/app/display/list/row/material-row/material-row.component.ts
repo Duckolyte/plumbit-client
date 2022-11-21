@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Material} from '../../../../data/model/material/material';
 import {RowComponent} from '../row-component';
 
@@ -9,19 +9,12 @@ import {RowComponent} from '../row-component';
 })
 export class MaterialRowComponent implements RowComponent<Material>, OnInit {
 
-  @Output()
-  deleteMaterial: EventEmitter<Material> = new EventEmitter<Material>();
+  @Input()
   rowData: Material;
 
-  @Input()
-  material: Material;
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
-  deleteItem() {
-    this.deleteMaterial.emit(this.material);
+  ngOnInit() {
   }
 }

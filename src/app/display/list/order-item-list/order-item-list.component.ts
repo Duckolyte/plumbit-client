@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {OrderItem} from '../../../data/model/order-item';
 import {OrderItemService} from '../../../data/service/order-item-service';
+import {ActiveServiceConfigService} from '../../../data/service/active-service-config.service';
 
 @Component({
   selector: 'app-order-item-list',
@@ -14,8 +15,11 @@ export class OrderItemListComponent<T extends OrderItem> implements OnInit {
   private viewedList: T[];
   private subheader: string;
   private filter = '';
+  private columnsCount: number;
 
-  constructor(@Inject('OrderItemService') private orderItemService: OrderItemService<T>) {
+  constructor(
+    @Inject('OrderItemService') private orderItemService: OrderItemService<T>, private activeServiceConfig: ActiveServiceConfigService) {
+    this.columnsCount = activeServiceConfig.activeServiceConfig.inputCount;
   }
 
   ngOnInit() {

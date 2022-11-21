@@ -2,6 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MaterialService} from '../../data/service/material.service';
 import {Material} from '../../data/model/material/material';
 import {MaterialListComponent} from '../../display/list/material-list/material-list.component';
+import {ActiveServiceConfigService, MaterialServiceConfig} from '../../data/service/active-service-config.service';
+import {OrderItemListComponent} from '../../display/list/order-item-list/order-item-list.component';
 
 @Component({
   selector: 'app-materials',
@@ -10,10 +12,12 @@ import {MaterialListComponent} from '../../display/list/material-list/material-l
 })
 export class MaterialsComponent implements OnInit {
 
-  @ViewChild(MaterialListComponent, {static: false}) materialListComponent: MaterialListComponent;
+  @ViewChild(OrderItemListComponent, {static: false}) materialListComponent: OrderItemListComponent<Material>;
   materials: Material[];
 
-  constructor(private materialService: MaterialService) { }
+  constructor(private materialService: MaterialService, private activeServiceConfig: ActiveServiceConfigService) {
+    this.activeServiceConfig.activeServiceConfig = MaterialServiceConfig;
+  }
 
   ngOnInit() {
     this.materials = this.materialService.getAll();
