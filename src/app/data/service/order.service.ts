@@ -87,7 +87,7 @@ export class OrderService implements CrudService<Order> {
 
   constructor() {  }
 
-  public getOrders() {
+  public getAll() {
   return this.testOrders;
 }
 

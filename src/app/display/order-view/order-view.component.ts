@@ -20,13 +20,13 @@ export class OrderViewComponent implements OnInit {
   constructor(private materialService: MaterialService, private workDescriptionService: WorkDescriptionService) { }
 
   ngOnInit() {
-    this.materialRowComponents = this.materialService.getMaterials().map(mat =>
+    this.materialRowComponents = this.materialService.getAll().map(mat =>
       new RowItem(
         MaterialRowComponent,
         {material: mat} as MaterialRowData)
     );
 
-    this.workDescriptionRowComponents = this.workDescriptionService.getWorkDescriptions().map(desc =>
+    this.workDescriptionRowComponents = this.workDescriptionService.getAll().map(desc =>
       new RowItem(
         WorkDescriptionRowComponent,
         {description: desc.name} as WorkDescriptionRowData)

@@ -1,0 +1,13 @@
+.row-container {
+  display: flex;
+}
+
+.row {
+  margin: 1em;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

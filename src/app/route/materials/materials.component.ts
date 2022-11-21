@@ -16,7 +16,7 @@ export class MaterialsComponent implements OnInit {
   constructor(private materialService: MaterialService) { }
 
   ngOnInit() {
-    this.materials = this.materialService.getMaterials();
+    this.materials = this.materialService.getAll();
   }
 
   filterList(filter: string) {

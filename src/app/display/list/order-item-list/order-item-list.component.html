@@ -6,16 +6,16 @@
         <button mat-flat-button color="primary" aria-label="Add" (click)="addItem()">
         <mat-icon>add</mat-icon>
       </button>
-      <button mat-flat-button color="primary" aria-label="Add" (click)="submit()">
+      <button mat-flat-button color="primary" aria-label="Check" (click)="submit()">
         <mat-icon>check</mat-icon>
       </button>
       </span>
     </div>
   </section>
   <mat-grid-list cols="1" rowHeight="10:1">
-    <mat-grid-tile *ngFor="let item of list">
+    <mat-grid-tile *ngFor="let item of viewedList">
       <div matLine>
-        <app-generic-edit-row [rowData]="item"></app-generic-edit-row>
+        <app-generic-edit-row (deleteRow)="deleteItem($event)" [rowData]="item"></app-generic-edit-row>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

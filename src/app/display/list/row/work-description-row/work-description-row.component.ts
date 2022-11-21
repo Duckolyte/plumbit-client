@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {RowComponent} from '../row-component';
-import {WorkDescriptionRowData} from './work-description-row-data';
-import {ServableRow} from '../servable-row';
-import {WorkDescriptionService} from '../../../../data/service/work-description.service';
 import {WorkDescription} from '../../../../data/model/work-description/work-description';
 
 @Component({

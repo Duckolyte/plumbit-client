@@ -38,6 +38,7 @@ import {WorkDescription} from './data/model/work-description/work-description';
 import {WorkDescriptionService} from './data/service/work-description.service';
 import {MaterialService} from './data/service/material.service';
 import {OrderItem} from './data/model/order-item';
+import {ActiveServiceConfigService} from './data/service/active-service-config.service';
 
 @NgModule({
   declarations: [
@@ -82,14 +83,20 @@ import {OrderItem} from './data/model/order-item';
     ],
   providers: [
     MaterialService,
-    WorkDescriptionService
-    /*{ provide: 'OrderItemService', useFactory: (type: Type<OrderItem>) => {
-      switch (type) {
-        case Material: return new MaterialService();
-        case WorkDescription: return new WorkDescriptionService();
-        default: throw new Error(`Error creating OrderItemService of type ${type.name}. Type not supported.`);
-      }
-      } }*/
+    WorkDescriptionService,
+    {
+      provide: 'OrderItemService', useFactory: (config: ActiveServiceConfigService) => {
+        switch (config.activeViewType) {
+          case Material:
+            return new MaterialService();
+          case WorkDescription:
+            return new WorkDescriptionService();
+          default:
+            throw new Error(`Error creating OrderItemService of type ${config.activeViewType.name}. Type not supported.`);
+        }
+      },
+      deps: [ActiveServiceConfigService]
+    }
   ],
   bootstrap: [AppComponent]
 })

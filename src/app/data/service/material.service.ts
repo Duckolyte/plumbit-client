@@ -1,8 +1,9 @@
-import {Component, Injectable, Type} from '@angular/core';
+import {Injectable, Type} from '@angular/core';
 import {MaterialUnit} from '../model/material/material-unit';
 import {Material} from '../model/material/material';
 import {OrderItemService} from './order-item-service';
 import {MaterialRowComponent} from '../../display/list/row/material-row/material-row.component';
+import {RowComponent} from '../../display/list/row/row-component';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,7 @@ export class MaterialService implements OrderItemService<Material> {
 
   constructor() { }
 
-  public getMaterials() {
+  public getAll() {
     return this.testMaterials;
   }
 
@@ -72,8 +73,12 @@ export class MaterialService implements OrderItemService<Material> {
     return new Material();
   }
 
-  getOrderItemRowComponent(): Type<any> {
+  getOrderItemRowComponent(): Type<RowComponent<Material>> {
     return MaterialRowComponent;
+  }
+
+  getSubheader(): string {
+    return 'Materials';
   }
 
 }

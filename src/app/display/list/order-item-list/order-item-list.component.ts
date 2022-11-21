@@ -19,7 +19,7 @@ export class OrderItemListComponent<T extends OrderItem> implements OnInit {
   }
 
   ngOnInit() {
-    this.subheader = 'Materials';
+    this.subheader = this.orderItemService.getSubheader();
     this.viewedList = this.list;
   }
 
@@ -54,7 +54,7 @@ export class OrderItemListComponent<T extends OrderItem> implements OnInit {
     return this.list.filter(item => !this.orderItemService.isValid(item)).length < 1;
   }
 
-  deleteMaterial(item: T) {
+  deleteItem(item: T) {
     this.list.splice(this.list.indexOf(item), 1);
     this.updateFilteredList(this.filter);
   }

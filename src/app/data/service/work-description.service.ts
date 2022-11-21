@@ -2,6 +2,7 @@ import {Injectable, Type} from '@angular/core';
 import {WorkDescription} from '../model/work-description/work-description';
 import {OrderItemService} from './order-item-service';
 import {WorkDescriptionRowComponent} from '../../display/list/row/work-description-row/work-description-row.component';
+import {RowComponent} from '../../display/list/row/row-component';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class WorkDescriptionService implements OrderItemService<WorkDescription>
 
   constructor() {  }
 
-  public getWorkDescriptions() {
+  public getAll() {
     return this.testWorkDescriptions;
   }
 
@@ -45,15 +46,19 @@ export class WorkDescriptionService implements OrderItemService<WorkDescription>
   }
 
   isNotValid(item: WorkDescription): boolean {
-    return false;
+    return !this.isValid(item);
   }
 
   isValid(item: WorkDescription): boolean {
-    return false;
+    return item.name != null;
   }
 
-  getOrderItemRowComponent(): Type<any> {
+  getOrderItemRowComponent(): Type<RowComponent<WorkDescription>> {
     return WorkDescriptionRowComponent;
+  }
+
+  getSubheader(): string {
+    return 'Steps';
   }
 
 }
