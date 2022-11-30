@@ -1,8 +1,10 @@
-<div class="row-container">
-  <ng-template appRowTemplate></ng-template>
-  <div class="align-center">
+<div class="a-row-container">
+  <span class="row-content-container">
+    <ng-template appRowTemplate></ng-template>
+  </span>
+  <span class="cancel-btn-container">
     <button matSuffix mat-icon-button color="primary" aria-label="Filter" (click)="deleteItem()" class="align-center">
       <mat-icon>cancel</mat-icon>
     </button>
-  </div>
+  </span>
 </div>

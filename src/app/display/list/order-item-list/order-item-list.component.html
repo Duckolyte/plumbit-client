@@ -12,11 +12,9 @@
       </span>
     </div>
   </section>
-  <mat-grid-list [cols]="columnsCount" rowHeight="10:1">
-    <mat-grid-tile *ngFor="let item of viewedList">
-      <div matLine>
-        <app-generic-edit-row (deleteRow)="deleteItem($event)" [rowData]="item"></app-generic-edit-row>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div *ngFor="let item of viewedList">
+    <app-generic-edit-row (deleteRow)="deleteItem($event)" [rowData]="item"></app-generic-edit-row>
+    <!--<div matLine>
+    </div>-->
+  </div>
 </div>

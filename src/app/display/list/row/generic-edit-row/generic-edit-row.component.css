@@ -1,9 +1,14 @@
-.row-container {
+
+.a-row-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.align-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.row-content-container {
+  width: 90%;
+}
+
+.cancel-btn-container {
+  width: 10%;
 }
