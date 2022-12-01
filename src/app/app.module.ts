@@ -8,12 +8,9 @@ import {CountComponent} from './display/input/material/count/count.component';
 import {UnitComponent} from './display/input/material/unit/unit.component';
 import {NameComponent} from './display/input/material/name/name.component';
 import {FormsModule} from '@angular/forms';
-import {TypedListComponent} from './display/list/typed-list/typed-list.component';
-import {OrderViewComponent} from './display/order-view/order-view.component';
 import {GenericEditRowComponent} from './display/list/row/generic-edit-row/generic-edit-row.component';
 import {RowTemplateDirective} from './display/list/row/row-template-directive';
 import {DescriptionComponent} from './display/input/work-description/description/description.component';
-import { EditButtonComponent } from './display/button/edit-button/edit-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatButtonModule,
@@ -30,14 +27,12 @@ import { MaterialsComponent } from './route/materials/materials.component';
 import { StepsComponent } from './route/steps/steps.component';
 import { OrdersComponent } from './route/orders/orders.component';
 import { OrderListComponent } from './display/list/order-list/order-list.component';
-import { MaterialListComponent } from './display/list/material-list/material-list.component';
 import { FilterComponent } from './display/filter/filter.component';
 import { OrderItemListComponent } from './display/list/order-item-list/order-item-list.component';
 import {Material} from './data/model/material/material';
 import {WorkDescription} from './data/model/work-description/work-description';
 import {WorkDescriptionService} from './data/service/work-description.service';
 import {MaterialService} from './data/service/material.service';
-import {OrderItem} from './data/model/order-item';
 import {ActiveServiceConfigService} from './data/service/active-service-config.service';
 
 @NgModule({
@@ -48,17 +43,13 @@ import {ActiveServiceConfigService} from './data/service/active-service-config.s
     CountComponent,
     UnitComponent,
     NameComponent,
-    TypedListComponent,
-    OrderViewComponent,
     GenericEditRowComponent,
     RowTemplateDirective,
     DescriptionComponent,
-    EditButtonComponent,
     MaterialsComponent,
     StepsComponent,
     OrdersComponent,
     OrderListComponent,
-    MaterialListComponent,
     FilterComponent,
     OrderItemListComponent],
   entryComponents: [

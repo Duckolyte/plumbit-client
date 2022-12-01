@@ -1,8 +1,8 @@
 # Todos:
 
-1. /steps input feld länge auf 100% expand
-2. alte material components abräumen
-3. alte datenstrukturen wie work-description-row-data.ts abräumen
+
+1. alte material components abräumen
+2. alte datenstrukturen wie work-description-row-data.ts abräumen
 3. basic routes einrichten, main, login, 404 
 4. feature modules einrichten für bill, property-owner 
 5. routs pro module einrichten

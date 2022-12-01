@@ -1,6 +1,5 @@
 import {RouterModule, Routes} from '@angular/router';
 
-import {OrderViewComponent} from './display/order-view/order-view.component';
 import {StepsComponent} from './route/steps/steps.component';
 import {MaterialsComponent} from './route/materials/materials.component';
 import {OrdersComponent} from './route/orders/orders.component';
@@ -8,7 +7,7 @@ import {OrdersComponent} from './route/orders/orders.component';
 const routes: Routes = [
   {
     path: '',
-    component: OrderViewComponent
+    component: OrdersComponent
   },
   {
     path: 'steps',

@@ -1,8 +1,0 @@
-<td>
-  <button mat-raised-button [style.text-align]="'center'" [matMenuTriggerFor]="menu">
-    {{label}}
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="item.action(rowItem)" *ngFor="let item of menuItems">{{item.label}}</button>
-  </mat-menu>
-</td>

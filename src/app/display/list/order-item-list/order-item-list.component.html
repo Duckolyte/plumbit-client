@@ -14,7 +14,5 @@
   </section>
   <div *ngFor="let item of viewedList">
     <app-generic-edit-row (deleteRow)="deleteItem($event)" [rowData]="item"></app-generic-edit-row>
-    <!--<div matLine>
-    </div>-->
   </div>
 </div>

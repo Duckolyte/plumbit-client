@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WorkDescriptionRowData} from '../../../list/row/work-description-row/work-description-row-data';
 import {WorkDescription} from '../../../../data/model/work-description/work-description';
 
 @Component({

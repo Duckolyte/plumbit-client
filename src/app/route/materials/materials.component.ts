@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MaterialService} from '../../data/service/material.service';
 import {Material} from '../../data/model/material/material';
-import {MaterialListComponent} from '../../display/list/material-list/material-list.component';
 import {ActiveServiceConfigService, MaterialServiceConfig} from '../../data/service/active-service-config.service';
 import {OrderItemListComponent} from '../../display/list/order-item-list/order-item-list.component';
 
