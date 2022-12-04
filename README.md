@@ -1,11 +1,9 @@
 # Todos:
 
 
-1. alte material components abräumen
-2. alte datenstrukturen wie work-description-row-data.ts abräumen
-3. basic routes einrichten, main, login, 404 
-4. feature modules einrichten für bill, property-owner 
-5. routs pro module einrichten
+1. basic routes einrichten, main, login, 404 
+2. feature modules einrichten für bill, property-owner 
+3. routes pro module einrichten
 
 
 
