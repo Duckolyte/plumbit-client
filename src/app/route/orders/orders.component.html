@@ -1,3 +1,4 @@
-<div>
+<div class="order-list-container">
+  <app-filter (filterChange)="filterList($event)"></app-filter>
   <app-order-list [orders]="orders"></app-order-list>
 </div>

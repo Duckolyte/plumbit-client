@@ -17,4 +17,9 @@ export class OrdersComponent implements OnInit {
     this.orders = this.orderService.getAll();
   }
 
+  filterList(filter: string) {
+    // TODO
+    // this.orders.filter(x => x.id == null || x.id.includes(filter));
+  }
+
 }

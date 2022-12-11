@@ -4,6 +4,7 @@
 1. basic routes einrichten, main, login, 404 
 2. feature modules einrichten für bill, property-owner 
 3. routes pro module einrichten
+4. route guards für lazy loading von modulen und login 
 
 
 

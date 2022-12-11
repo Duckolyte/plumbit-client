@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, Type} from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {MaterialRowComponent} from './display/list/row/material-row/material-row.component';
@@ -34,6 +34,9 @@ import {WorkDescription} from './data/model/work-description/work-description';
 import {WorkDescriptionService} from './data/service/work-description.service';
 import {MaterialService} from './data/service/material.service';
 import {ActiveServiceConfigService} from './data/service/active-service-config.service';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,9 @@ import {ActiveServiceConfigService} from './data/service/active-service-config.s
     OrdersComponent,
     OrderListComponent,
     FilterComponent,
-    OrderItemListComponent],
+    OrderItemListComponent,
+    NotFoundComponent,
+    LoginComponent],
   entryComponents: [
     MaterialRowComponent,
     WorkDescriptionRowComponent
@@ -70,9 +75,10 @@ import {ActiveServiceConfigService} from './data/service/active-service-config.s
         MatTableModule,
         MatCardModule,
         MatGridListModule,
-        MatListModule
+        MatListModule,
     ],
   providers: [
+    UserService,
     MaterialService,
     WorkDescriptionService,
     {
